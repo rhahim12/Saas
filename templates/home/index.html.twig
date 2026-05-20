@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<section class="flex h-screen gap-10 ">
+    <div class="flex-1 border border-gray-200">
+        <button class="flex gap-2">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <h1>Facturation</h1>
+        </button>
+        <button class="flex gap-2">
+            <i class="fa-solid fa-tachograph-digital"></i>
+            <p>Dashboard</p>
+        </button>
+        <button class="flex gap-2">
+            <a href="{{ path('app_invoice_index') }}">
+                <i class="fa-regular fa-file-lines"></i>
+                <al>Factures</al>
+            </a>
+        </button>
+
+        <button class="flex gap-2">
+            <a href="{{ path('app_client_index') }}">
+                <i class="fa-regular fa-user"></i>
+                <al>Clients</al>
+            </a>
+        </button>
+
+        <button class="flex gap-2">
+            <a href="{{ path('app_product_index') }}">
+                <i class="fa-solid fa-box-open"></i>
+                <al>Produits</al>
+            </a>
+        </button>
+
+        <button class="flex gap-2">
+    
+        <i class="fa-solid fa-gear"></i>
+        <al>Profil</al>
+        
+        </button>
+
+
+
+    </div>
+
+    <div class="flex-9 ">
+        <h1>Dashboard</h1>
+        <div class="flex gap-2">
+            <div class="border border rounded-xl border-gray-200">
+                <i class="fa-solid fa-euro-sign"></i>
+                <p>Chiffre d'affaires(Payé)</p>
+                <p>2250€</p>
+            </div>
+            <div class="border rounded-xl">
+                <i class="fa-solid fa-euro-sign"></i>
+                <p>Chiffre d'affaires(Payé)</p>
+                <p>2250€</p>
+            </div>
+            <div class="border rounded-xl">
+                <i class="fa-solid fa-euro-sign"></i>
+                <p>Chiffre d'affaires(Payé)</p>
+                <p>2250€</p>
+            </div>
+            <div class="border rounded-xl">
+                <i class="fa-solid fa-euro-sign"></i>
+                <p>Chiffre d'affaires(Payé)</p>
+                <p>2250€</p>
+            </div>
+        </div>
+
+        <div>
+            <h1>Chiffre d'affaires mensuel(Factures payées)</h1>
+            <div class="flex gap-2">
+                <div class="w-10 h-40 bg-blue-500 rounded-t-md"></div>
+                <div class="w-10 h-50 bg-blue-500 rounded-t-md"></div>
+                <div class="w-10 h-50 bg-blue-500 rounded-t-md"></div>
+                <div class="w-10 h-50 bg-blue-500 rounded-t-md"></div>
+                <div class="w-10 h-50 bg-blue-500 rounded-t-md"></div>
+                <div class="w-10 h-50 bg-blue-500 rounded-t-md"></div>
+            </div>
+            <div class="flex gap-2">
+                <button class="flex border rounded-2xl">
+                    <div>
+                        <a href="{{ path('app_invoice_new') }}">
+                            <h1>Créer une facture</h1>
+                            <p>Nouvelle prestation</p>
+
+                        </a>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button class="flex border rounded-2xl">
+                    <div>
+                        <a href="{{ path('app_client_new') }}">
+
+                            <h1>Ajouter un client</h1>
+                            <p>Gérer le repertoire</p>
+                        </a>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button class="flex border rounded-2xl">
+                    <div>
+                        <a href="{{ path('app_product_new') }}">
+
+                            <h1>Créer un produit / service</h1>
+                            <p>Enrichir le catalogue pour rédiger rapidement vos factures</p>
+                        </a>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <button
+                class="flex justify-around items-center border rounded-2xl mt-5 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-blue-500">
+                <div>
+                    <a href="{{ path('app_mailer_interface') }}">
+
+                        <h1 class="">Relancer tous les clients</h1>
+                        <p>Envoyer un mail à tout les clients en retard de paiement</p>
+                    </a>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+                    {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ logout_path() }}">Logout</a>
+                your id is {{app.user.id}}
+            </div>
+        {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
