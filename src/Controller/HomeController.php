@@ -22,6 +22,9 @@ final class HomeController extends AbstractController
     }
 
   
-
+    public function flashes() : array
+    {
+        
+    }
 
 }

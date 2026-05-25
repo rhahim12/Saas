@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FlashController!{% endblock %}
+
+{% block body %}
+<h1>flash</h1>
+{% for invoice in invoices %}
+
+<section class="flex ">
+
+    <div class="flex flex-col ">
+
+        <td>{{ invoice.id }}</td>
+        <td>{{ invoice.number }}</td>
+        <td>{{ invoice.totalTtc }}</td>
+        <td>{{ invoice.createdAt ? invoice.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+        <td>{{ invoice.status.value }}</td>
+
+        {% else %}
+        <tr>
+            <td colspan="6">no records found</td>
+        </tr>
+    </div>
+    {% endfor %}
+
+
+
+    <div class="">
+
+        <td>{{ one.id }}</td>
+        <td>{{ one.number }}</td>
+        <td>{{ one.totalTtc }}</td>
+        <td>{{ one.createdAt ? one.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+        <td>{{ one.status.value }}</td>
+    </div>
+</section>
+{% endblock %}
